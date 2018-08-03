@@ -1,16 +1,17 @@
-// Components/Home.js
+// Components/SignIn.js
+// Connexion
 
 import React from 'react'
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
-import { onSignOut } from '../Tools/Authentication'
+import { StyleSheet, View, TouchableOpacity, Text } from 'react-native'
+import { onSignIn } from '../Tools/Authentication'
 
 export default ({ navigation }) => (
   <View style={styles.main_container}>
   <View style={styles.header}>
-  <Text>Home</Text>
+  <Text>Connexion</Text>
   </View>
-  <TouchableOpacity style={styles.tile_container} onPress={() => {onSignOut().then(() => navigation.navigate("SignedOut"))}}>
-  <Text style={styles.text_home}>Déconnexion</Text>
+  <TouchableOpacity style={styles.tile_container} onPress={() => {onSignIn().then(() => navigation.navigate("SignedIn"))}}>
+  <Text style={styles.text_home}>Connexion</Text>
   </TouchableOpacity>
   <View style={styles.ender}/>
   </View>

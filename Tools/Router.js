@@ -1,34 +1,41 @@
 // Tools/Router.js
 
-import {TabNavigator, SwitchNavigator, StackNavigator} from "react-navigation";
+import {createBottomTabNavigator, createSwitchNavigator, createStackNavigator} from "react-navigation";
 import Home from "../Components/Home";
 import Login from "../Components/Login";
+import SignUp from "../Components/SignUp";
+import SignIn from "../Components/SignIn";
+import Demonstration from "../Components/Demonstration";
 
-export const SignedOut = StackNavigator({
-  Login: {
-    screen: Login
-  }
+export const SignedOut = createStackNavigator({
+  Login: {screen: Login},
+  SignUp: {screen: SignUp},
+  SignIn: {screen: SignIn},
+  Demonstration: {screen: Demonstration}
+},
+{
+  navigationOptions: {header: null}
 });
 
-export const SignedIn = TabNavigator(
+export const SignedIn = createBottomTabNavigator(
   {
     Home: {
       screen: Home
     }}
-);
-
-export const createRootNavigator = (signedIn = false) => {
-  return SwitchNavigator(
-    {
-      SignedIn: {
-        screen: SignedIn
-      },
-      SignedOut: {
-        screen: SignedOut
-      }
-    },
-    {
-      initialRouteName: signedIn ? "SignedIn" : "SignedOut"
-    }
   );
-};
+
+  export const createRootNavigator = (signedIn = false) => {
+    return createSwitchNavigator(
+      {
+        SignedIn: {
+          screen: SignedIn
+        },
+        SignedOut: {
+          screen: SignedOut
+        }
+      },
+      {
+        initialRouteName: signedIn ? "SignedIn" : "SignedOut"
+      }
+    );
+  };

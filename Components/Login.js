@@ -1,8 +1,7 @@
-// // Components/Login.js
+// Components/Login.js
 
 import React from 'react'
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native'
-import { onSignIn } from '../Tools/Authentication'
 
 export default ({ navigation }) => (
   <View style={styles.main_container}>
@@ -10,13 +9,13 @@ export default ({ navigation }) => (
   <Text style={styles.text_header}>FinChart</Text>
   <Text style={styles.text_header_sub}>La DataViz appliquée à vos finances</Text>
   </View>
-  <TouchableOpacity style={styles.tile_container} onPress={() => {}}>
+  <TouchableOpacity style={styles.tile_container} onPress={() => {navigation.navigate("SignUp")}}>
   <Text style={styles.text_home}>Inscription</Text>
   </TouchableOpacity>
-  <TouchableOpacity style={styles.tile_container} onPress={() => {onSignIn().then(() => navigation.navigate("SignedIn"))}}>
+  <TouchableOpacity style={styles.tile_container} onPress={() => {navigation.navigate("SignIn")}}>
   <Text style={styles.text_home}>Connexion</Text>
   </TouchableOpacity>
-  <TouchableOpacity style={styles.tile_container} onPress={() => {}}>
+  <TouchableOpacity style={styles.tile_container} onPress={() => {navigation.navigate("Demonstration")}}>
   <Text style={styles.text_home}>Démonstration</Text>
   </TouchableOpacity>
   <View style={styles.ender}/>
