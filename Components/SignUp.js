@@ -12,15 +12,15 @@ export default ({ navigation }) => (
   </View>
   <View style={styles.form_container}>
   <FormLabel>Email</FormLabel>
-  <FormInput placeholder=" Adresse email..." />
-  <FormLabel>Mot de passe</FormLabel>
-  <FormInput secureTextEntry placeholder=" Mot de passe..." />
-  <FormLabel>Confirmation du mot de passe</FormLabel>
-  <FormInput secureTextEntry placeholder=" Confirmation du mot de passe..." />
+      <FormInput placeholder=" Adresse email..." />
+      <FormLabel>Mot de passe</FormLabel>
+      <FormInput secureTextEntry placeholder=" Mot de passe..." />
+      <FormLabel>Confirmation du mot de passe</FormLabel>
+      <FormInput secureTextEntry placeholder=" Confirmation du mot de passe..." />
   </View>
   <View style={styles.ender}/>
   <TouchableOpacity style={styles.tile_container} onPress={() => {navigation.navigate("Login")}}>
-  <Text style={styles.text_home}>S'inscrire</Text> {/* ' commentaire pour éviter le visuel rouge suite à l'usage de l'apostrophe*/}
+    <Text style={styles.text_home}>S'inscrire</Text>
   </TouchableOpacity>
   <View style={styles.ender}/>
   </View>
