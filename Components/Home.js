@@ -9,6 +9,7 @@ export default ({ navigation }) => (
   <View style={styles.header}>
   <Text style={styles.text_header}>Accueil</Text>
   </View>
+  <View style={styles.spacer}/>
   <TouchableOpacity style={styles.tile_container} onPress={() => {onSignOut().then(() => navigation.navigate("SignedOut"))}}>
   <Text style={styles.text_home}>Déconnexion</Text>
   </TouchableOpacity>
@@ -32,11 +33,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#000000"
   },
+  spacer: {
+    flex: 1.25
+  },
   ender: {
     flex:0.25
   },
   tile_container: {
-    flex: 2.75,
+    flex: 1.5,
     marginLeft: 20,
     marginRight: 20,
     marginTop: 5,
