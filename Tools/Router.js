@@ -17,12 +17,14 @@ export const SignedOut = createStackNavigator({
   navigationOptions: {header: null}
 });
 
-export const SignedIn = createBottomTabNavigator(
-  {
+export const SignedIn = createBottomTabNavigator({
     Home: {
       screen: Home
-    }}
-  );
+    }
+  },
+  {
+    navigationOptions: {tabBarVisible: false}
+  });
 
   export const createRootNavigator = (signedIn = false) => {
     return createSwitchNavigator(
