@@ -2,6 +2,8 @@
 
 import {createBottomTabNavigator, createSwitchNavigator, createStackNavigator} from "react-navigation";
 import Home from "../Components/Home";
+import Profile from "../Components/Profile";
+import Settings from "../Components/Settings";
 import Login from "../Components/Login";
 import SignUp from "../Components/SignUp";
 import SignIn from "../Components/SignIn";
@@ -18,12 +20,18 @@ export const SignedOut = createStackNavigator({
 });
 
 export const SignedIn = createBottomTabNavigator({
-    Home: {
+    Accueil: {
       screen: Home
+    },
+    Profil: {
+      screen: Profile
+    },
+    Paramètres: {
+      screen: Settings
     }
   },
   {
-    navigationOptions: {tabBarVisible: false}
+    navigationOptions: {tabBarVisible: true, tabBarOptions: {activeTintColor: '#aa530e', inactiveTintColor: '#df8931'}}
   });
 
   export const createRootNavigator = (signedIn = false) => {
