@@ -3,6 +3,7 @@
 
 import React from 'react'
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native'
+import { FormLabel, FormInput } from "react-native-elements";
 import { onSignIn } from '../Tools/Authentication'
 
 export default ({ navigation }) => (
@@ -10,8 +11,15 @@ export default ({ navigation }) => (
   <View style={styles.header}>
   <Text style={styles.text_header}>Connexion</Text>
   </View>
+  <View style={styles.form_container}>
+      <FormLabel>Email</FormLabel>
+      <FormInput placeholder=" Adresse email..." />
+      <FormLabel>Mot de passe</FormLabel>
+      <FormInput secureTextEntry placeholder=" Mot de passe..." />
+  </View>
+  <View style={styles.ender}/>
   <TouchableOpacity style={styles.tile_container} onPress={() => {onSignIn().then(() => navigation.navigate("SignedIn"))}}>
-  <Text style={styles.text_home}>Connexion</Text>
+    <Text style={styles.text_home}>Connexion</Text>
   </TouchableOpacity>
   <View style={styles.ender}/>
   </View>
@@ -36,8 +44,13 @@ const styles = StyleSheet.create({
   ender: {
     flex:0.25
   },
+  form_container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'flex-start'
+  },
   tile_container: {
-    flex: 2.75,
+    flex: 1.5,
     marginLeft: 20,
     marginRight: 20,
     marginTop: 5,
