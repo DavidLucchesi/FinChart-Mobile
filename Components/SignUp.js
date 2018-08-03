@@ -7,7 +7,7 @@ import { StyleSheet, View, Text } from 'react-native'
 export default ({ navigation }) => (
   <View style={styles.main_container}>
   <View style={styles.header}>
-  <Text>Inscription</Text>
+  <Text style={styles.text_header}>Inscription</Text>
   </View>
   <View style={styles.ender}/>
   </View>
@@ -19,11 +19,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#f3eded'
   },
   header: {
-    flex: 3,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
   },
+  text_header: {
+    fontSize: 32,
+    paddingBottom: 8,
+    fontWeight: "bold",
+    color: "#000000"
+  },
   ender: {
-    flex:3.5
+    flex:3
   }
 })

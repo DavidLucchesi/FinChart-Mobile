@@ -7,7 +7,7 @@ import { onSignOut } from '../Tools/Authentication'
 export default ({ navigation }) => (
   <View style={styles.main_container}>
   <View style={styles.header}>
-  <Text>Home</Text>
+  <Text style={styles.text_header}>Accueil</Text>
   </View>
   <TouchableOpacity style={styles.tile_container} onPress={() => {onSignOut().then(() => navigation.navigate("SignedOut"))}}>
   <Text style={styles.text_home}>Déconnexion</Text>
@@ -22,15 +22,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#f3eded'
   },
   header: {
-    flex: 3,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
   },
+  text_header: {
+    fontSize: 32,
+    paddingBottom: 8,
+    fontWeight: "bold",
+    color: "#000000"
+  },
   ender: {
-    flex:0.5
+    flex:0.25
   },
   tile_container: {
-    flex: 3,
+    flex: 2.75,
     marginLeft: 20,
     marginRight: 20,
     marginTop: 5,
