@@ -3,7 +3,7 @@
 
 import React from 'react'
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native'
-import { FormLabel, FormInput } from "react-native-elements";
+import { FormLabel, FormInput } from "react-native-elements"
 import { onSignIn } from '../Tools/Authentication'
 
 export default ({ navigation }) => (
